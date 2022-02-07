@@ -1,5 +1,6 @@
 import styles from "./Hero.module.scss"
 import DiscordStatus from "./discordStatus"
+import SpotifyStatus from "./spotifyStatus"
 
 export default function Hero() {
     return (
@@ -23,7 +24,6 @@ export default function Hero() {
                     </ul>
                 </div>
                 <DiscordStatus />
-
             </div>
             <div className="fixed bottom-0 left-0 w-full h-2 bg-gradient-to-r from-gray-300 to-gray-500"></div>
             {/*

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from './Hero.module.scss'
+import SpotifyStatus from './spotifyStatus'
 
 export default function DiscordStatus() {
     const [data, setData] = useState(null)
@@ -13,6 +14,15 @@ export default function DiscordStatus() {
                 setData(data)
                 setLoading(false)
             })
+        setInterval(() => {
+            fetch('https://api.lanyard.rest/v1/users/331005037062914050')
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data)
+                setLoading(false)
+            })
+        }, 60000)
+        
     }, [])
 
     if (isLoading) return (
@@ -30,11 +40,12 @@ export default function DiscordStatus() {
         <div className="flex flex-row justify-center items-center">
             <h3 id={styles.heading} className="text-gray-700 text-lg align-top ml-7">STATUS</h3>
             <ul className="ml-3 animate-pulse">
-                <li>
+                <li className='flex flex-col gap-2'>
                     <p className="text-red-500 flex flex-row items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                         Do Not Disturb
                     </p>
+                    <SpotifyStatus />
                 </li>
             </ul>
         </div>
@@ -43,11 +54,12 @@ export default function DiscordStatus() {
         <div className="flex flex-row justify-center items-center">
             <h3 id={styles.heading} className="text-gray-700 text-lg align-top ml-7">STATUS</h3>
             <ul className="ml-3 animate-pulse">
-                <li>
+                <li className='flex flex-col gap-2'>
                     <p className="text-yellow-500 flex flex-row items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                         Idle
                     </p>
+                    <SpotifyStatus />
                 </li>
             </ul>
         </div>
@@ -56,11 +68,12 @@ export default function DiscordStatus() {
         <div className="flex flex-row justify-center items-center">
             <h3 id={styles.heading} className="text-gray-700 text-lg align-top ml-7">STATUS</h3>
             <ul className="ml-3 animate-pulse">
-                <li>
+                <li className='flex flex-col gap-2'>
                     <p className="text-green-500 flex flex-row items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         Online
                     </p>
+                    <SpotifyStatus />
                 </li>
             </ul>
         </div>
@@ -69,11 +82,12 @@ export default function DiscordStatus() {
         <div className="flex flex-row justify-center items-center">
             <h3 id={styles.heading} className="text-gray-700 text-lg align-top ml-7">STATUS</h3>
             <ul className="ml-3 animate-pulse">
-                <li>
+                <li className='flex flex-col gap-2'>
                     <p className="text-gray-500 flex flex-row items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-gray-500"></div>
                         Offline
                     </p>
+                    <SpotifyStatus />
                 </li>
             </ul>
         </div>
