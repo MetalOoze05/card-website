@@ -42,7 +42,7 @@ export default function SpotifyStatus() {
 
         return (
            
-                        <p className="text-green-500 flex flex-row items-center gap-2">
+                        <p className="text-green-500 flex flex-row flex-wrap items-center gap-2 whitespace-normal">
                             <span className="fas fa-music"></span>
                             Listening to <a href={'https://open.spotify.com/track/' + track_id} target="_blank">{song}</a> on Spotify by {artist}
                         </p>
