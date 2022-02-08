@@ -1,0 +1,11 @@
+.socials {
+    position: fixed;
+    top: 50%;
+    right: 2.5rem;
+
+    @media screen and (max-width: 786px) {
+        top: 92%;
+        right: auto;
+        left: 2.5rem;
+    }
+}

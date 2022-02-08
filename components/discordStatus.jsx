@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import styles from './Hero.module.scss'
 import SpotifyStatus from './spotifyStatus'
+import VscodeStatus from './vscodeStatus'
 
 export default function DiscordStatus() {
     const [data, setData] = useState(null)
@@ -37,15 +38,16 @@ export default function DiscordStatus() {
     )
 
     if (data.data.discord_status == 'dnd') return (
-        <div className="flex flex-row justify-center items-center">
-            <h3 id={styles.heading} className="text-gray-700 text-lg align-top ml-7">STATUS</h3>
-            <ul className="ml-3 animate-pulse">
+        <div className="flex flex-row justify-center items-center -ml-2 md:-ml-0 gap-3 md:gap-5">
+            <h3 id={styles.heading} className="text-gray-700 text-lg align-top">STATUS</h3>
+            <ul className="animate-pulse">
                 <li className='flex flex-col gap-2'>
                     <p className="text-red-500 flex flex-row items-center gap-2">
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                         Do Not Disturb
                     </p>
                     <SpotifyStatus />
+                    <VscodeStatus />
                 </li>
             </ul>
         </div>
@@ -60,6 +62,7 @@ export default function DiscordStatus() {
                         Idle
                     </p>
                     <SpotifyStatus />
+                    <VscodeStatus />
                 </li>
             </ul>
         </div>
@@ -74,6 +77,7 @@ export default function DiscordStatus() {
                         Online
                     </p>
                     <SpotifyStatus />
+                    <VscodeStatus />
                 </li>
             </ul>
         </div>
@@ -88,6 +92,7 @@ export default function DiscordStatus() {
                         Offline
                     </p>
                     <SpotifyStatus />
+                    <VscodeStatus />
                 </li>
             </ul>
         </div>

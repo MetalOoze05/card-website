@@ -26,7 +26,6 @@ export default function SpotifyStatus() {
 
     if (isLoading) return (
         <p className="text-gray-500 ml-7">
-            <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24"></svg>
             Loading
         </p>
     )
@@ -41,12 +40,10 @@ export default function SpotifyStatus() {
         const track_id = data.data.spotify.track_id;
 
         return (
-           
-                        <p className="text-green-500 flex flex-row flex-wrap items-center gap-2 whitespace-normal">
-                            <span className="fas fa-music"></span>
-                            Listening to <a href={'https://open.spotify.com/track/' + track_id} target="_blank">{song}</a> on Spotify by {artist}
-                        </p>
-               
+            <p className="text-green-500 flex flex-row flex-wrap items-center gap-2 whitespace-normal">
+                <span className="fas fa-music"></span>
+                Listening to <a href={'https://open.spotify.com/track/' + track_id} target="_blank">{song}</a> on Spotify by {artist}
+            </p> 
         )
     }
 

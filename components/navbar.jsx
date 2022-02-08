@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Navbar() {
     useEffect(() => {
@@ -27,11 +27,6 @@ export default function Navbar() {
                     <h1 id='name' className='text-gray-300'>MetalOoze</h1>
                 </div>
                 <div className="flex flex-row justify-center gap-7">
-                    {/*<ul>
-                        <li className="uppercase text-gray-100 hover:text-gray-100 transition duration-200 ">
-                            <Link href="/#home">Home</Link>
-                        </li>
-                    </ul>*/}
                     <ul>
                         <li className="uppercase text-gray-400 hover:text-gray-100 transition duration-200">
                             <Link href="mailto:metaloozedesigns@gmail.com">Contact</Link>
