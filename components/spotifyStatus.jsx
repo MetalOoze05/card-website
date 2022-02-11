@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from './Hero.module.scss'
+import ReactToolTip from "react-tooltip";
 
 export default function SpotifyStatus() {
     const [data, setData] = useState(null)
@@ -38,9 +38,11 @@ export default function SpotifyStatus() {
         const song = data.data.spotify.song;
         const artist = data.data.spotify.artist;
         const track_id = data.data.spotify.track_id;
+        const album_image = data.data.spotify.album_art_url;
 
-        return (
-            <p className="text-green-500 flex flex-row flex-wrap items-center gap-2 whitespace-normal">
+        return ( 
+            <p data-tip={"<img src='" + album_image + "' width='200px'></img>"} data-background-color="transparent" data-html={true} className="text-green-500 flex flex-row flex-wrap items-center gap-2 whitespace-normal">
+                <ReactToolTip />
                 <span className="fas fa-music"></span>
                 Listening to <a href={'https://open.spotify.com/track/' + track_id} target="_blank">{song}</a> on Spotify by {artist}
             </p> 
