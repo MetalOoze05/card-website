@@ -22,13 +22,13 @@ export default function Navbar() {
 
     return (
         <nav className='fixed bg-zinc-900 w-full px-10 md:px-10 py-5'>
-            <ReactToolTip />
+            <ReactToolTip className='text-white bg-slate-700' />
             <div className="flex flex-row justify-between items-center">
                 <div>
                     <audio id='audio' hidden loop>
                         <source src='/assets/audio.mp3'/>
                     </audio>
-                    <h1 data-tip="Click for an Easter Egg :D" data-effect="solid" id='name' className='text-gray-300'>MetalOoze</h1>
+                    <Image data-color='#9CA3AF' data-border={true} data-tip="Click for an Easter Egg :D" data-effect="solid" id='name' src="/assets/Logo.svg" width="50px" height="50px" alt="MetalOoze" />
                 </div>
                 <div className="flex flex-row justify-center gap-7">
                     <ul>

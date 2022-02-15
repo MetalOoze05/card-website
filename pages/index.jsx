@@ -10,6 +10,7 @@ export default function Home() {
       <title>MetalOoze</title>
       <meta name="title" content="MetalOoze"></meta>
       <meta name="description" content="Internet Wanderer + Website Developer + Gamer trying to reach bronze in valorant"></meta>
+      <link rel="icon" type='image/x-icon' href="/assets/favicon.svg" />
 
       {/*Open Graph*/}
       <meta property="og:type" content="website"></meta>
