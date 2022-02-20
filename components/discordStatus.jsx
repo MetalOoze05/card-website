@@ -67,7 +67,7 @@ export default function DiscordStatus() {
             <ul className="ml-3 animate-pulse">
                 <li className='flex flex-col gap-2'>
                     <p className="text-yellow-500 flex flex-row items-center gap-2">
-                        <div className={`fas fa-circle ${systemEmoji} text-red-500`}></div>
+                        <div className={`fas fa-circle ${systemEmoji} text-yellow-500`}></div>
                         Idle
                     </p>
                     <SpotifyStatus />
@@ -82,7 +82,7 @@ export default function DiscordStatus() {
             <ul className="ml-3 animate-pulse">
                 <li className='flex flex-col gap-2'>
                     <p className="text-green-500 flex flex-row items-center gap-2">
-                        <div className={`fas fa-circle ${systemEmoji} text-red-500`}></div>
+                        <div className={`fas fa-circle ${systemEmoji} text-green-500`}></div>
                         Online
                     </p>
                     <SpotifyStatus />
