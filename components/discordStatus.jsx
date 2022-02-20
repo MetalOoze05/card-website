@@ -36,6 +36,15 @@ export default function DiscordStatus() {
     if (!data) return (
         <p className="text-red-400 ml-7">Failed to load Discord Data.</p>
     )
+    
+    let systemEmoji;
+    if (data.data.active_on_discord_web) {
+        systemEmoji = 'fab fa-chrome'
+    } else if (data.data.active_on_discord_mobile) {
+        systemEmoji = 'fas fa-mobile'
+    } else if (data.data.active_on_discord_desktop) {
+        systemEmoji = 'fas fa-desktop'
+    }
 
     if (data.data.discord_status == 'dnd') return (
         <div className="flex flex-row justify-center items-center -ml-2 md:-ml-0 gap-3 md:gap-5">
@@ -43,7 +52,7 @@ export default function DiscordStatus() {
             <ul className="animate-pulse">
                 <li className='flex flex-col gap-2'>
                     <p className="text-red-500 flex flex-row items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                        <span className={`fas fa-circle ${systemEmoji} text-red-500`}></span>
                         Do Not Disturb
                     </p>
                     <SpotifyStatus />
@@ -58,7 +67,7 @@ export default function DiscordStatus() {
             <ul className="ml-3 animate-pulse">
                 <li className='flex flex-col gap-2'>
                     <p className="text-yellow-500 flex flex-row items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div className={`fas fa-circle ${systemEmoji} text-red-500`}></div>
                         Idle
                     </p>
                     <SpotifyStatus />
@@ -73,7 +82,7 @@ export default function DiscordStatus() {
             <ul className="ml-3 animate-pulse">
                 <li className='flex flex-col gap-2'>
                     <p className="text-green-500 flex flex-row items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                        <div className={`fas fa-circle ${systemEmoji} text-red-500`}></div>
                         Online
                     </p>
                     <SpotifyStatus />
