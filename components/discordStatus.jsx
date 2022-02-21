@@ -46,60 +46,44 @@ export default function DiscordStatus() {
         systemEmoji = 'fas fa-desktop'
     }
 
-    if (data.data.discord_status == 'dnd') return (
-        <div className="flex flex-row justify-center items-center -ml-2 md:-ml-0 gap-3 md:gap-5">
+    const Status = () => {
+        if (data.data.discord_status == 'dnd') {
+            return (
+                <p className="text-red-500 flex flex-row items-center gap-2">
+                    <span className={`${systemEmoji} text-red-500`}></span>
+                    Do Not Disturb
+                </p>
+            )
+        } else if (data.data.discord_status == 'idle') {
+            return (
+                <p className="text-yellow-500 flex flex-row items-center gap-2">
+                    <span className={`${systemEmoji} text-yellow-500`}></span>
+                    Idle
+                </p>
+            )
+        } else if (data.data.discord_status == 'online') {
+            return (
+                <p className="text-green-500 flex flex-row items-center gap-2">
+                    <span className={`${systemEmoji} text-green-500`}></span>
+                    Online
+                </p>
+            )
+        } else {
+            return (
+                <p className="text-gray-500 flex flex-row items-center gap-2">
+                    <span className={`fas fa-circle text-gray-500`}></span>
+                    Online
+                </p>
+            )
+        }
+    }
+
+    return (
+        <div className="flex flex-row justify-center items-center -ml-2 md:ml-0 gap-3 md:gap-5">
             <h3 id={styles.heading} className="text-gray-700 text-lg align-top">STATUS</h3>
             <ul className="animate-pulse">
-                <li className='flex flex-col gap-2'>
-                    <p className="text-red-500 flex flex-row items-center gap-2">
-                        <span className={`fas fa-circle ${systemEmoji} text-red-500`}></span>
-                        Do Not Disturb
-                    </p>
-                    <SpotifyStatus />
-                    <VscodeStatus />
-                </li>
-            </ul>
-        </div>
-    )
-    if (data.data.discord_status == 'idle') return (
-        <div className="flex flex-row justify-center items-center">
-            <h3 id={styles.heading} className="text-gray-700 text-lg align-top ml-7">STATUS</h3>
-            <ul className="ml-3 animate-pulse">
-                <li className='flex flex-col gap-2'>
-                    <p className="text-yellow-500 flex flex-row items-center gap-2">
-                        <div className={`fas fa-circle ${systemEmoji} text-yellow-500`}></div>
-                        Idle
-                    </p>
-                    <SpotifyStatus />
-                    <VscodeStatus />
-                </li>
-            </ul>
-        </div>
-    )
-    if (data.data.discord_status == 'online') return (
-        <div className="flex flex-row justify-center items-center">
-            <h3 id={styles.heading} className="text-gray-700 text-lg align-top ml-7">STATUS</h3>
-            <ul className="ml-3 animate-pulse">
-                <li className='flex flex-col gap-2'>
-                    <p className="text-green-500 flex flex-row items-center gap-2">
-                        <div className={`fas fa-circle ${systemEmoji} text-green-500`}></div>
-                        Online
-                    </p>
-                    <SpotifyStatus />
-                    <VscodeStatus />
-                </li>
-            </ul>
-        </div>
-    )
-    return (
-        <div className="flex flex-row justify-center items-center">
-            <h3 id={styles.heading} className="text-gray-700 text-lg align-top ml-7">STATUS</h3>
-            <ul className="ml-3 animate-pulse">
-                <li className='flex flex-col gap-2'>
-                    <p className="text-gray-500 flex flex-row items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-gray-500"></div>
-                        Offline
-                    </p>
+                <li className="flex flex-col gap-2">
+                    <Status />
                     <SpotifyStatus />
                     <VscodeStatus />
                 </li>
